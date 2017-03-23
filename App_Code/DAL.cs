@@ -394,16 +394,22 @@ public class DAL
 
     //*********************************************Continuar a partir daqui para 2017***********************************************************************************
 
-    public List<ListaProdutos> ListaDeProdutos(string nome_procura, string categoria)
+    public List<ListaProdutos> ListaDeProdutos(string nome_procura, int categoria)
     {
-        string sql = "select p.id_produto,p.Nome_Produto, u.Nome_Unidade from produto p inner join TipoUnidade u on u.ID_TipoUnidade = p.ID_TipoUnidade";
+        string sql = "select p.id_produto,p.Nome_Produto, u.Nome_Unidade from produto p inner join TipoUnidade u on u.ID_TipoUnidade = p.ID_TipoUnidade ";
 
-        if (!String.IsNullOrEmpty(nome_procura) || !String.IsNullOrEmpty(categoria))
+        //melhorar esse if pq ta feio, mas funcional :)
+        if (!String.IsNullOrEmpty(nome_procura) || categoria > 0)
         {
-            sql += " where 1=1 ";//gambis feia mas ta valendo
+            if (categoria > 0) sql += " inner join Categoria c on c.id_categoria=p.id_categoria ";
 
-            sql += " where p.Nome_Produto like '%"+nome_procura+"%'";
+            sql += " where 1=1 ";
+            if (!String.IsNullOrEmpty(nome_procura)) sql += " and p.Nome_Produto like '%" + nome_procura + "%'";
+            if (categoria > 0) sql += " and CATEGORIA=" + categoria.ToString();
+
         }
+
+        sql += " order by p.Nome_Produto";
         try
         {
             List<ListaProdutos> lista = new List<ListaProdutos>();
@@ -435,8 +441,7 @@ public class DAL
         {
             FechaConexao();
         }
+
     }
 
-
-
-}
+    }

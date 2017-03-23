@@ -22,14 +22,15 @@ public partial class Busca : System.Web.UI.Page
         //lst.Nome_Unidade = "Kg";
         //lst.ID_Produto = 2;
         //listaproduto.Add(lst);
-        Carregar_Grid("");
+        Carregar_Grid();
     }
 
-    protected void Carregar_Grid(string nome_procura)
+    protected void Carregar_Grid()
     {
         DAL dal = new DAL();
-        
-        grdProdutos.DataSource = dal.ListaDeProdutos("","");
+        int cat = 0;
+        int.TryParse(ddlCategoria.SelectedValue,out cat);
+        grdProdutos.DataSource = dal.ListaDeProdutos(txtNomeLista.Text, cat);
         grdProdutos.DataBind();
         grdProdutos.Columns[4].Visible = false;
 
@@ -37,11 +38,11 @@ public partial class Busca : System.Web.UI.Page
 
     protected void btnNomeIr_Click(object sender, EventArgs e)
     {
-
+        Carregar_Grid();
     }
 
     protected void btnAdicionar_Click(object sender, EventArgs e)
     {
-
+        
     }
 }

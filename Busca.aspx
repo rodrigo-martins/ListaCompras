@@ -14,18 +14,22 @@
             <div style="padding:20px 0px 10px 0px;vertical-align:middle;">
                 <asp:Label ID="lblcriarlista" runat="server"  Text="Nome:"></asp:Label>
             </div>
-            <asp:TextBox ID="txtNomeLista" runat="server" Width="178px" style="vertical-align:middle;" ></asp:TextBox>
-            <asp:Button ID="btnNomeIr" runat="server" Text="Ir &raquo;" class="btn btn-primary " style="height:27px;width:56px;padding:2px 12px;" OnClick="btnNomeIr_Click"/>
+            <asp:TextBox ID="txtNomeLista" runat="server" Width="230px" style="vertical-align:middle;" ></asp:TextBox>
+            
         </div>
-         <div class="col-md-4" style="padding: 30px 0px 10px 0px;">
-             <div>
+         <div class="col-md-4" style="padding: 0px 0px 10px 0px;">
+             <%--<div>
                  Ou
-             </div>
-             <div style="padding: 30px 0px 10px 0px;">
+             </div>--%>
+             <div style="padding: 10px 0px 10px 0px;">
                  <asp:Label ID="lblCategoria" runat="server" Text="Categoria:"></asp:Label>
              </div>
              <div>
                  <asp:DropDownList ID="ddlCategoria" runat="server" Width="242px" ></asp:DropDownList>
+                 
+             </div>
+             <div style="padding: 10px 0px 0px 0px;">
+                <asp:Button ID="btnNomeIr" runat="server" Text="Filtrar &raquo;" class="btn btn-primary " style="padding:2px 12px;" OnClick="btnNomeIr_Click" Width="107px"/>
              </div>
              <div style="padding: 30px 0px 10px 0px;text-align:center;">
                  <asp:GridView ID="grdProdutos" runat="server" CellPadding="4" ForeColor="#333333" horizontalalign="Center" GridLines="None" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" EmptyDataText="Ainda não tem itens!" >
