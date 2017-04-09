@@ -5,7 +5,7 @@
     <div class="jumbotron" style="text-align:center;">
         <%--<h1>ASP.NET</h1>--%>
         <%--<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>--%>
-        <p><a href="CriarLista.aspx" class="btn btn-success btn-lg" style="width:155px">Criar Lista &raquo;</a></p>
+        <p><a href="CriarLista.aspx" class="btn btn-primary btn-lg" style="width:155px">Criar Lista &raquo;</a></p>
         <p></p>
         <p><a href="Default.aspx" class="btn btn-primary btn-lg" style="width: 155px">Ir às Compras &raquo;</a></p>
     </div>
