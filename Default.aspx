@@ -2,12 +2,15 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="jumbotron" style="text-align:center;">
+    <div>
         <%--<h1>ASP.NET</h1>--%>
         <%--<p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>--%>
-        <p><a href="CriarLista.aspx" class="btn btn-primary btn-lg" style="width:155px">Criar Lista &raquo;</a></p>
+        <br/>
+        <br/>
+        <br/>
+        <a href="CriarLista.aspx" class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-plus-sign"></span> Criar Lista</a>
         <p></p>
-        <p><a href="Default.aspx" class="btn btn-primary btn-lg" style="width: 155px">Ir às Compras &raquo;</a></p>
+        <a href="Default.aspx" class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Ir às Compras</a>
     </div>
 
     <%--<div class="row">

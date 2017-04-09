@@ -38,27 +38,28 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #428bca;">
+        <div class="navbar navbar-default navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar" style="background-color:black;"></span>
-                        <span class="icon-bar" style="background-color:black;"></span>
-                        <span class="icon-bar" style="background-color:black;"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" style="color:black;" runat="server" href="Default.aspx">Lista de Compras Dinâmica</a>
+                    <a class="navbar-brand" runat="server" href="Default.aspx"><span class="glyphicon glyphicon-home"></span> Lista de Compras</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" style="color:black;" href="Default.aspx">Inicio</a></li>
-                        <li><a runat="server" style="color:black;" href="CriarLista.aspx">Criar Lista</a></li>
-                        <li><a runat="server" style="color:black;" href="Lista">Lista</a></li>
+                        <li><a runat="server" href="Default.aspx"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                        <li><a runat="server" href="CriarLista.aspx"><span class="glyphicon glyphicon-plus-sign"></span> Criar Lista</a></li>
+                        <li><a runat="server" href="Lista"><span class="glyphicon glyphicon-th-list"></span> Listas</a></li>
+                        <li role="separator" class="divider"></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Register">Register</a></li>
-                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                                <li><a runat="server" href="~/Account/Register"><span class="glyphicon glyphicon-user"></span> Registrar</a></li>
+                                <li><a runat="server" href="~/Account/Login"><span class="glyphicon glyphicon-log-out"></span> Log in</a></li>
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -76,9 +77,10 @@
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; FATEC2016 - Maiko Palos - 16100660</p><%--<%: DateTime.Now.Year %>--%>
+           
+            <footer class="navbar-fixed-bottom">
+                <hr/>              
+                <p class="container"><small>&copy; IHC - FATEC2017</small></p><%--<%: DateTime.Now.Year %>--%>
             </footer>
         </div>
     </form>
