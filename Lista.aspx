@@ -13,15 +13,16 @@
         
          <div class="col-md-4">
              <div style="padding: 30px 0px 10px 0px;">
+                  <asp:Label ID="lblMessage" runat="server" Text="" Visible="false" ForeColor="Red"></asp:Label>
                  <div style="padding: 30px 0px 10px 0px;" id="sel_lista" runat="server" visible="false">
                      <asp:DropDownList ID="ddlSel_lista" runat="server" Visible="false"></asp:DropDownList>
                      <asp:Button ID="btnAddUsua" runat="server" Text="ok" class="btn btn-primary" Height="28px" Width="51px"  style="padding:0px;" OnClick="btnAddUsua_Click" />
-                     <asp:Label ID="lblMessage" runat="server" Text="" Visible="false" ForeColor="Red"></asp:Label>
+                    
                  </div>
                  <asp:GridView ID="grdLista" runat="server" horizontalalign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" OnRowDeleting="grdLista_RowDeleting" EmptyDataText="Ainda não tem itens!" >
                      <AlternatingRowStyle BackColor="White" />
                      <Columns>
-                         <asp:CommandField HeaderText="Excluir" DeleteText="Excluir" ShowDeleteButton="True" ShowHeader="True" InsertVisible="False" />
+                         <asp:CommandField HeaderText="Excluir" DeleteText="Excluir" ShowDeleteButton="True" ShowHeader="True" InsertVisible="False"  />
                          <asp:BoundField DataField="Nome_Produto" HeaderText="Produto" ReadOnly="True" />
                          <asp:TemplateField HeaderText="Quantidade">
                              <EditItemTemplate>

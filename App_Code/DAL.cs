@@ -444,4 +444,53 @@ public class DAL
 
     }
 
+    public void InserirProdutoLista(string id_produto,string id_lista,string quantidade)
+    {
+        string sql = @"INSERT INTO [ListaCompartilhada].[dbo].[Lista_Item]
+                                   ([ID_Lista]
+                                   ,[ID_Produto]
+                                   ,[Quantidade])
+                             VALUES                                   
+                           (" + id_lista + "," + id_produto + "," + quantidade + ")";
+
+        try
+        {
+            AbreConexao();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        finally
+        {
+            FechaConexao();
+        }
     }
+
+    public void DeleteProdutoLista(string id_produto, string id_lista)
+    {
+        string sql = @"delete [ListaCompartilhada].[dbo].[Lista_Item]                                   
+                             where                                   
+                           ID_Lista=" + id_lista + " and ID_Produto=" + id_produto;
+
+        try
+        {
+            AbreConexao();
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.ExecuteNonQuery();
+
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+        finally
+        {
+            FechaConexao();
+        }
+    }
+
+}

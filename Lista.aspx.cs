@@ -78,7 +78,15 @@ public partial class Lista : Page
 
     protected void btnBusca_Click(object sender, EventArgs e)
     {
-        Context.Response.Redirect("Busca.aspx?listid="+Session["id_lista"]);
+        if (Session["id_lista"] == null || String.IsNullOrEmpty(Session["id_lista"].ToString()))
+        {
+            lblMessage.Text = "É preciso escolher uma lista!";
+            lblMessage.Visible = true;
+            SelecionarLista();
+
+        }
+        else
+            Context.Response.Redirect("Busca.aspx?listid="+Session["id_lista"]);
     }
 
    
