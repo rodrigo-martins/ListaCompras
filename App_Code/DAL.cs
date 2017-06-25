@@ -11,7 +11,7 @@ using System.Data;
 /// </summary>
 public class DAL
 {
-    protected string connString = @"Data Source=MAIKO-NOTE\SQLEXPRESS;Initial Catalog=ListaCompartilhada;Integrated Security=False;User ID=IHC;Password=fatec;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+    protected string connString = @"Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security Info=False;Initial Catalog=ListaCompartilhada;Data Source=DESKTOP-K9SMQT4\SQLEXPRESS";
     protected SqlConnection conn;
     public DAL()
     {   
