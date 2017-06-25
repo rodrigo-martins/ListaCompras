@@ -1,14 +1,13 @@
 ﻿<%@ Page Title="Registrar" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Account_Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-    <h2>Registrar</h2>
-    <p class="text-danger">
-        <asp:Literal runat="server" ID="ErrorMessage" />
-    </p>
-
+    
     <div class="form-horizontal">
         <h4>Criar uma nova conta</h4>
         <hr />
+        <p class="text-danger">
+            <asp:Literal runat="server" ID="ErrorMessage" />
+        </p>
         <asp:ValidationSummary runat="server" CssClass="text-danger" />
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="UserName" CssClass="col-md-2">Nome</asp:Label>
@@ -38,9 +37,15 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Registrar" CssClass="btn btn-default" />
+                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Registrar" CssClass="btn btn-primary" />
             </div>
         </div>
     </div>
+    <p>
+        <asp:HyperLink runat="server" NavigateUrl="~/Login.aspx" ID="RegisterHyperLink" ViewStateMode="Disabled">
+            Login
+        </asp:HyperLink>
+    </p>
+    
 </asp:Content>
 
