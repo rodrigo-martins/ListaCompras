@@ -12,7 +12,7 @@ public partial class CriarLista : Page
         if (!IsPostBack)
         {
             
-            PreencherCmbCompartilhar(false);
+            PreencherListaMeracado();
         }
 
         lblMessage.Visible = false;
@@ -20,7 +20,15 @@ public partial class CriarLista : Page
 
     }
 
-   
+    private void PreencherListaMeracado()
+    {
+        List<string> listmercado = new List<string>();
+        listmercado.Add("Selecione um Mercado");
+        listmercado.Add("Pão de Açúcar");
+        ddlMercado.DataSource = listmercado;
+        ddlMercado.DataBind();
+    }
+
     protected void grdAmigos_RowDeleting(object sender, GridViewDeleteEventArgs e)
     {
         e.Values.ToString();
@@ -40,42 +48,42 @@ public partial class CriarLista : Page
         
     }
 
-    protected void grdLista_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
-        grdAmigos.Columns[2].Visible = true;
-        int i = e.Values.Count;
-    }
+    //protected void grdLista_RowDeleting(object sender, GridViewDeleteEventArgs e)
+    //{
+    //    grdAmigos.Columns[2].Visible = true;
+    //    int i = e.Values.Count;
+    //}
 
-    protected void PreencherCmbCompartilhar(bool filtrar)
-    {
-        try
-        {
-            DAL dal = new DAL();
-            ddlCompartilhar.DataValueField = "ID_Usuario";
-            ddlCompartilhar.DataTextField = "Nome_Usuario";
-            if (filtrar)
-            {
-                ddlCompartilhar.DataSource = dal.ListaUsuario((int)Session["id_usua"],txtFiltro.Text);
-            }
-            else
-            {
-                ddlCompartilhar.DataSource = dal.ListaUsuario((int)Session["id_usua"],"");
-            }
+    //protected void PreencherCmbCompartilhar(bool filtrar)
+    //{
+    //    try
+    //    {
+    //        DAL dal = new DAL();
+    //        ddlCompartilhar.DataValueField = "ID_Usuario";
+    //        ddlCompartilhar.DataTextField = "Nome_Usuario";
+    //        if (filtrar)
+    //        {
+    //            ddlCompartilhar.DataSource = dal.ListaUsuario((int)Session["id_usua"],txtFiltro.Text);
+    //        }
+    //        else
+    //        {
+    //            ddlCompartilhar.DataSource = dal.ListaUsuario((int)Session["id_usua"],"");
+    //        }
             
-            ddlCompartilhar.DataBind();
-            ddlCompartilhar.Items.Insert(0, "--Selecione--");
-        }
-        catch (Exception ex)
-        {
-            lblMessage.Text = "Desculpe, mas apreceu um erro: " + ex.Message;
-            lblMessage.Visible = true;
-        }
-    }
+    //        ddlCompartilhar.DataBind();
+    //        ddlCompartilhar.Items.Insert(0, "--Selecione--");
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        lblMessage.Text = "Desculpe, mas apreceu um erro: " + ex.Message;
+    //        lblMessage.Visible = true;
+    //    }
+    //}
 
-    protected void btnFiltro_Click(object sender, EventArgs e)
-    {
-        PreencherCmbCompartilhar(true);
-    }
+    //protected void btnFiltro_Click(object sender, EventArgs e)
+    //{
+    //    PreencherCmbCompartilhar(true);
+    //}
 
     protected void btnAddUsua_Click(object sender, EventArgs e)
     {
@@ -85,12 +93,12 @@ public partial class CriarLista : Page
 
             if (VerificarNomeLista())
             {
-                grdAmigos.Columns[2].Visible = true;
+                //grdAmigos.Columns[2].Visible = true;
 
-                dal.AddUsuaGrupoLista(Convert.ToInt32(ddlCompartilhar.SelectedValue), (int)Session["id_lista"]);
-                grdAmigos.DataSource = dal.ListaGrupoUsuario((int)Session["id_lista"]);
-                grdAmigos.DataBind();
-                grdAmigos.Columns[2].Visible = false;
+                //dal.AddUsuaGrupoLista(Convert.ToInt32(ddlCompartilhar.SelectedValue), (int)Session["id_lista"]);
+                //grdAmigos.DataSource = dal.ListaGrupoUsuario((int)Session["id_lista"]);
+                //grdAmigos.DataBind();
+                //grdAmigos.Columns[2].Visible = false;
             }
             else
             {

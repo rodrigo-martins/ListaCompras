@@ -24,11 +24,11 @@
             <asp:Label ID="lblMessage" runat="server" Text="" Visible="false" ForeColor="Red"></asp:Label>
         </div>
         <br/>    
-        <div class="col-xs-6">
+        <%--<div class="col-xs-6">
             <asp:Button ID="btnAdicionar" runat="server" Text="Adicionar Lista" class="btn btn-block btn-primary btn-lg" OnClick="btnAdicionar_Click" />
-        </div>
-         <div class="col-xs-6">
-            <a href="Lista.aspx" class="btn btn-block btn-primary btn-lg">Finalizar</a>
+        </div>--%>
+         <div class="col-xs-12">
+            <a href="Lista.aspx" class="btn btn-primary btn-block btn-lg" style="width:80%;">Finalizar</a>
         </div>
     </div>
 </asp:Content>

@@ -17,7 +17,11 @@
                 <asp:TextBox ID="txtNomeLista" runat="server" class="form-control"></asp:TextBox>
             </div>
         </div>
-        <div class="col-xs-12">
+        <div class="col-xs-8">
+            <asp:Label ID="lblMercado" runat="server" Text="Mercado:"></asp:Label>
+            <asp:DropDownList ID="ddlMercado" runat="server" CssClass="form-control"></asp:DropDownList>  
+        </div>
+        <%--<div class="col-xs-12">
             <asp:Label ID="lblAmigo" runat="server" Text="Compartilhar Lista com alguém?"></asp:Label>
             <div class="row">
                 <div class="col-xs-8">
@@ -29,8 +33,8 @@
                     <asp:Button ID="btnFiltro" runat="server" Text="Filtrar" class="btn btn-primary btn-block" OnClick="btnFiltro_Click" />
                 </div>
             </div>
-        </div>
-        <div class="col-xs-12">
+        </div>--%>
+        <%--<div class="col-xs-12">
             <div class="row">
                 <div class="col-xs-9">
                     <asp:GridView ID="grdAmigos" runat="server" HorizontalAlign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" OnRowDeleting="grdLista_RowDeleting">
@@ -57,7 +61,7 @@
                     <asp:Button ID="btnAddUsua" runat="server" Text=" + " class="btn btn-primary btn-block" OnClick="btnAddUsua_Click" />
                 </div>
             </div>
-        </div>
+        </div>--%>
         <div class="col-xs-12">
             <asp:Label ID="lblMessage" runat="server" Text="" Visible="false" ForeColor="Red"></asp:Label>
         </div>

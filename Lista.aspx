@@ -6,9 +6,9 @@
         <div class="col-xs-4">
             <asp:Button ID="btnBusca" runat="server" Text="Buscar" CssClass="btn btn-block btn-primary" OnClick="btnBusca_Click"/>
         </div>
-        <div class="col-xs-4">
+        <%--<div class="col-xs-4">
             <asp:Button ID="btnCadastro" runat="server" Text="Cadastrar" CssClass="btn btn-block btn-primary" OnClick="btnCadastro_Click"/>
-        </div>
+        </div>--%>
         <div class="col-xs-4">
             <asp:Button ID="btnSelLista" runat="server" Text="Lista" class="btn btn-block btn-primary" OnClick="btnSelLista_Click"/>
         </div>
@@ -28,7 +28,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-12">
+        <div class="col-xs-12" style="padding-top:30px;">
             <asp:GridView ID="grdLista" runat="server" horizontalalign="Center" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" ShowHeaderWhenEmpty="True" OnRowDeleting="grdLista_RowDeleting" EmptyDataText="Ainda não tem itens!" >
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>

@@ -68,7 +68,7 @@ public partial class Busca : System.Web.UI.Page
                 }
                 else
                 {
-                    dal.DeleteProdutoLista(linha.Cells[4].Text, Session["id_lista"].ToString());
+                    //dal.DeleteProdutoLista(linha.Cells[4].Text, Session["id_lista"].ToString());
                 }
             }
         }

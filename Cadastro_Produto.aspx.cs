@@ -17,10 +17,10 @@ public partial class Cadastro_Produto : System.Web.UI.Page
         lblMessage.Visible = false;
     }
 
-    protected void btnAdicionar_Click(object sender, EventArgs e)
-    {
+    //protected void btnAdicionar_Click(object sender, EventArgs e)
+    //{
 
-    }
+    //}
 
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {

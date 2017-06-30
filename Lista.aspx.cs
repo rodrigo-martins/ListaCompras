@@ -61,6 +61,7 @@ public partial class Lista : Page
 
     protected void CarregarGrid()
     {
+        grdLista.Visible = true;
         DAL dal = new DAL();
         grdLista.Columns[4].Visible = true;
         grdLista.DataSource = dal.ListaItens(Convert.ToInt32(Session["id_lista"])) ;
@@ -71,9 +72,12 @@ public partial class Lista : Page
        
 
     protected void grdLista_RowDeleting(object sender, GridViewDeleteEventArgs e)
-    {
+    {        
         grdLista.Columns[4].Visible = true;
-        int i = e.Values.Count;
+        
+        DAL dal = new DAL();
+        dal.DeleteProdutoLista(grdLista.Rows[e.RowIndex].Cells[4].Text, Session["id_lista"].ToString());
+        CarregarGrid();
     }
 
     protected void btnBusca_Click(object sender, EventArgs e)
@@ -90,10 +94,10 @@ public partial class Lista : Page
     }
 
    
-    protected void btnCadastro_Click(object sender, EventArgs e)
-    {
-        Context.Response.Redirect("Cadastro_Produto.aspx?listid=1");
-    }
+    //protected void btnCadastro_Click(object sender, EventArgs e)
+    //{
+    //    Context.Response.Redirect("Cadastro_Produto.aspx?listid=1");
+    //}
 
     
     protected void btnAddUsua_Click(object sender, EventArgs e)
@@ -108,6 +112,7 @@ public partial class Lista : Page
     protected void btnSelLista_Click(object sender, EventArgs e)
     {
         Session.Remove("id_lista");
+        grdLista.Visible = false;
         SelecionarLista();
     }
 }

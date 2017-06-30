@@ -63,7 +63,7 @@
     </div> 
     <br />
     <br />
-    <div class="row">
+    <div class="row" style="padding-bottom:40px;">
          <div class="col-xs-6">
             <asp:Button ID="btnAdicionar" runat="server" Text="Adicionar" class="btn btn-block btn-primary btn-lg" OnClick="btnAdicionar_Click"/>              
          </div>

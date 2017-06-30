@@ -10,7 +10,8 @@
         <br/>
         <a href="CriarLista.aspx" class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-plus-sign"></span> Criar Lista</a>
         <p></p>
-        <a href="Default.aspx" class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Ir às Compras</a>
+        <%--<a href="Default.aspx" class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Ir às Compras</a>--%>
+        <a href="Lista.aspx" class="btn btn-primary btn-block btn-lg"><span class="glyphicon glyphicon-shopping-cart"></span> Minhas Listas</a>
     </div>
 
     <%--<div class="row">
