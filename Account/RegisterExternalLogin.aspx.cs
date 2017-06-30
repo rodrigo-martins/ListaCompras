@@ -24,7 +24,7 @@ public partial class Account_RegisterExternalLogin : System.Web.UI.Page
         ProviderName = IdentityHelper.GetProviderNameFromRequest(Request);
         if (String.IsNullOrEmpty(ProviderName))
         {
-            Response.Redirect("~/Account/Login");
+            Response.Redirect("~/Login");
         }
         if (!IsPostBack)
         {
@@ -32,7 +32,7 @@ public partial class Account_RegisterExternalLogin : System.Web.UI.Page
             var loginInfo = Context.GetOwinContext().Authentication.GetExternalLoginInfo();
             if (loginInfo == null)
             {
-                Response.Redirect("~/Account/Login");
+                Response.Redirect("~/Login");
             }
             var user = manager.Find(loginInfo.Login);
             if (user != null)
@@ -46,7 +46,7 @@ public partial class Account_RegisterExternalLogin : System.Web.UI.Page
                 var verifiedloginInfo = Context.GetOwinContext().Authentication.GetExternalLoginInfo(IdentityHelper.XsrfKey, User.Identity.GetUserId());
                 if (verifiedloginInfo == null)
                 {
-                    Response.Redirect("~/Account/Login");
+                    Response.Redirect("~/Login");
                 }
 
                 var result = manager.AddLogin(User.Identity.GetUserId(), verifiedloginInfo.Login);
@@ -86,7 +86,7 @@ public partial class Account_RegisterExternalLogin : System.Web.UI.Page
             var loginInfo = Context.GetOwinContext().Authentication.GetExternalLoginInfo();
             if (loginInfo == null)
             {
-                Response.Redirect("~/Account/Login");
+                Response.Redirect("~/Login");
                 return;
             }
             result = manager.AddLogin(user.Id, loginInfo.Login);
